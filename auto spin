@@ -23,10 +23,11 @@ while true do
     end
 end
 
-ScriptTab:AddToggle({
-	Name = "Anti AFK",
-	Default = false,
-	Callback = function(Value)
-		loadstring(game:HttpGet("https://pastebin.com/raw/SZkHcmKR"))()
-	end    
+
+Tab:AddButton({
+	Name = "Button!",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/SZkHcmKR"))()
+  	end    
 })
+
