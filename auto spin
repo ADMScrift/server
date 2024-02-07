@@ -1,0 +1,32 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ADMScrift/library/main/blue')))()
+local Window = OrionLib:MakeWindow({Name = "Berserker Dominous", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local ScriptTab = Window:MakeTab({
+	Name = "Script",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Spin_enabled = false
+
+ScriptTab:AddToggle({
+    Name = "Spin",
+    Default = false,
+    Callback = function(Value)
+        Spin_enabled = Value
+    end    
+})
+
+while true do
+    wait(0.00000001)
+    if Spin_enabled then
+        game:GetService("ReplicatedStorage"):WaitForChild("SharedModule"):WaitForChild("Remotes"):WaitForChild("Spin"):FireServer()
+    end
+end
+
+ScriptTab:AddToggle({
+	Name = "Anti AFK",
+	Default = false,
+	Callback = function(Value)
+		loadstring(game:HttpGet("https://pastebin.com/raw/SZkHcmKR"))()
+	end    
+})
